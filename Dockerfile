@@ -1,4 +1,5 @@
-FROM node:12-buster-slim
+FROM node:12-buster-slim 
+# node是官方image的名字，12-buster-slim是tag
 # WORKDIR  指定了*之后*所有Docker命令的工作路径。如果没有这个路径会创建一个路径
 WORKDIR /app
 
@@ -22,7 +23,7 @@ CMD ["npm", "start"]
 #     --rm \
 #     -v ${PWD}:/app \
 #     -v /app/node_modules \
-#     -p 3001:3000 \
+#     -p 3001:3000 \  # 3001是本地主机的port, 3000是容器的port！！
 #     -e CHOKIDAR_USEPOLLING=true \
 #     sample:dev
 
